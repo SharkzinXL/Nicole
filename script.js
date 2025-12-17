@@ -4,7 +4,13 @@ function mostrar() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const heartsContainer = document.getElementById("hearts");
+  const music = document.getElementById("bg-music");
+  const volumeSlider = document.querySelector('.music-player input');
 
+  // volume inicial
+  music.volume = volumeSlider.value;
+
+  // Corações
   function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
@@ -15,26 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     heartsContainer.appendChild(heart);
 
-    setTimeout(() => {
-      heart.remove();
-    }, 7000);
+    setTimeout(() => heart.remove(), 7000);
   }
 
   setInterval(createHeart, 300);
+
+  // botão play / pause
+  window.toggleMusic = function () {
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  };
+
+  // controle de volume
+  window.setVolume = function (value) {
+    if (music.paused) {
+      music.play(); // garante permissão do navegador
+    }
+    music.volume = value;
+  };
 });
-const music = document.getElementById("bg-music");
-
-// volume inicial
-music.volume = 0.3;
-
-function toggleMusic() {
-  if (music.paused) {
-    music.play();
-  } else {
-    music.pause();
-  }
-}
-
-function setVolume(value) {
-  music.volume = value;
-}
