@@ -135,3 +135,18 @@ body {
   width: 120px;
   margin-top: 6px;
 }
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 15px;
+  border-radius: 20px;
+}
+
+.music-player input[type="range"] {
+  width: 120px;
+  cursor: pointer;
+  accent-color: #ff3366;
+}
