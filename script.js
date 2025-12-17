@@ -24,10 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 const music = document.getElementById("bg-music");
 
+// volume inicial
+music.volume = 0.3;
+
 function toggleMusic() {
   if (music.paused) {
     music.play();
   } else {
     music.pause();
   }
+}
+
+function setVolume(value) {
+  music.volume = value;
 }
