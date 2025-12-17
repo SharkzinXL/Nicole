@@ -22,3 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(createHeart, 300);
 });
+const music = document.getElementById("bg-music");
+
+function toggleMusic() {
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
