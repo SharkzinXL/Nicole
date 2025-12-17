@@ -131,3 +131,7 @@ body {
     transform: translateY(0);
   }
 }
+.music-player input[type="range"] {
+  width: 120px;
+  margin-top: 6px;
+}
